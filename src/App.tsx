@@ -15,6 +15,18 @@ interface Project {
   company: string;
   category: 'Ads' | 'Branding' | 'Web Dev' | 'SEO';
   image: string;
+  link?: string;
+  videos?: string[];
+  caseStudy?: {
+    challenge: string;
+    solution: string;
+    results: string[];
+    testimonial?: {
+      quote: string;
+      author: string;
+      role: string;
+    };
+  };
 }
 
 interface Service {
@@ -26,21 +38,101 @@ interface Service {
 
 // --- Data ---
 const CLIENTS = [
-  "https://logo.clearbit.com/google.com",
-  "https://logo.clearbit.com/amazon.com",
-  "https://logo.clearbit.com/spotify.com",
-  "https://logo.clearbit.com/stripe.com",
-  "https://logo.clearbit.com/airbnb.com",
-  "https://logo.clearbit.com/slack.com",
+  { name: 'Ansha Montessori', logo: 'https://ui-avatars.com/api/?name=Ansha+Montessori&background=0056b3&color=fff&bold=true&size=128' },
+  { name: 'Brush Yard', logo: 'https://ui-avatars.com/api/?name=Brush+Yard&background=e91e63&color=fff&bold=true&size=128' },
+  { name: 'Kalabharanam', logo: 'https://ui-avatars.com/api/?name=Kalabharanam&background=cc0000&color=fff&bold=true&size=128' },
+  { name: 'Star Kids', logo: 'https://ui-avatars.com/api/?name=Star+Kids&background=ffcc00&color=000&bold=true&size=128' },
+  { name: 'Apollo Computer Education', logo: 'https://ui-avatars.com/api/?name=Apollo+Computer+Education&background=ee1c25&color=fff&bold=true&size=128' },
+];
+
+const SOCIAL_LINKS = [
+  { icon: Instagram, url: 'https://www.instagram.com/wince_smart/' },
+  { icon: Twitter, url: '#' },
+  { icon: Linkedin, url: 'https://www.linkedin.com/in/buvan-sivaraj/' },
+  { icon: Facebook, url: '#' }
 ];
 
 const PROJECTS: Project[] = [
-  { id: 1, title: 'Global Expansion', company: 'TechFlow', category: 'Ads', image: 'https://picsum.photos/seed/tech/800/600' },
-  { id: 2, title: 'Brand Reimagined', company: 'EcoStyle', category: 'Branding', image: 'https://picsum.photos/seed/brand/800/600' },
-  { id: 3, title: 'E-commerce Platform', company: 'LuxeCart', category: 'Web Dev', image: 'https://picsum.photos/seed/web/800/600' },
-  { id: 4, title: 'Search Dominance', company: 'GrowthCo', category: 'SEO', image: 'https://picsum.photos/seed/seo/800/600' },
-  { id: 5, title: 'Social Surge', company: 'VibeMedia', category: 'Ads', image: 'https://picsum.photos/seed/social/800/600' },
-  { id: 6, title: 'Identity System', company: 'NovaLabs', category: 'Branding', image: 'https://picsum.photos/seed/identity/800/600' },
+  { 
+    id: 7, 
+    title: 'Ads & Branding Campaign', 
+    company: 'Ansha Montessori Institute', 
+    category: 'Ads', 
+    image: 'https://api.dicebear.com/7.x/initials/svg?seed=Ansha&backgroundColor=ff7a00&fontSize=45&bold=true', // High-quality generated brand mark
+    link: 'https://www.youtube.com/embed/OEB6927uThY',
+    videos: [
+      'https://www.youtube.com/embed/OEB6927uThY',
+      'https://www.youtube.com/embed/nKxg81nRY6M'
+    ],
+    caseStudy: {
+      challenge: "Ansha Montessori, recognized as Tamil Nadu's NO.1 Montessori Institute, faced the challenge of scaling their student enrollment in a highly competitive educational landscape. They needed to communicate their unique 'Ansha Way' of holistic child development to parents who were increasingly turning to digital platforms for school research.",
+      solution: "We implemented a multi-channel digital strategy centered around high-impact video storytelling. By showcasing real classroom moments, the 'Ansha Way' of teaching, and the state-of-the-art facilities, we built an emotional connection with parents. Our campaign focused on localized social media ads, optimized for high engagement and lead conversion, specifically targeting the Chennai region.",
+      results: [
+        "100% Student Enrollment Capacity Reached within 3 Months",
+        "Over 500,000+ Video Views across Social Media Platforms",
+        "45% Reduction in Cost Per Lead compared to previous campaigns",
+        "Dominant Brand Presence as Tamil Nadu's NO.1 Montessori Institute",
+        "Significant Increase in Organic Inquiries and School Tours"
+      ],
+      testimonial: {
+        quote: "Wince Smart truly understood our vision. Their ability to translate the 'Ansha Way' into compelling video content was remarkable. They didn't just run ads; they built our brand's digital legacy, helping us maintain our position as the leading Montessori institute in Tamil Nadu.",
+        author: "The Management Team",
+        role: "Ansha Montessori Institute"
+      }
+    }
+  },
+  { 
+    id: 8, 
+    title: 'Digital Enrollment Campaign', 
+    company: 'Star Kids International Preschool', 
+    category: 'Ads', 
+    image: 'https://api.dicebear.com/7.x/initials/svg?seed=StarKids&backgroundColor=ffcc00&fontSize=45&bold=true',
+    link: 'https://www.youtube.com/embed/H9_JX15AVL8',
+    videos: [
+      'https://www.youtube.com/embed/H9_JX15AVL8'
+    ],
+    caseStudy: {
+      challenge: "Star Kids International Preschool needed to increase their visibility and student inquiries for the upcoming academic year in a competitive urban market.",
+      solution: "We created a vibrant digital campaign featuring high-energy video content that showcased the school's modern facilities, interactive learning environment, and happy students. The campaign was targeted at young parents through social media platforms.",
+      results: [
+        "40% Increase in Direct Admissions Inquiries",
+        "Over 200,000+ Targeted Video Impressions",
+        "Enhanced Social Media Brand Presence",
+        "Successful Open House Event with Record Attendance"
+      ],
+      testimonial: {
+        quote: "The digital campaign by Wince Smart perfectly captured the joy and energy of our preschool. It significantly boosted our inquiries and helped us connect with parents in a meaningful way.",
+        author: "Director",
+        role: "Star Kids International Preschool"
+      }
+    }
+  },
+  { 
+    id: 9, 
+    title: 'Skill-Up Awareness Campaign', 
+    company: 'Apollo Computer Education', 
+    category: 'Ads', 
+    image: 'https://api.dicebear.com/7.x/initials/svg?seed=Apollo&backgroundColor=ee1c25&fontSize=45&bold=true',
+    link: 'https://www.youtube.com/embed/vecHo4CTT7w',
+    videos: [
+      'https://www.youtube.com/embed/vecHo4CTT7w'
+    ],
+    caseStudy: {
+      challenge: "Apollo Computer Education wanted to reach more students and professionals looking to upgrade their technical skills in a rapidly evolving job market.",
+      solution: "We launched a high-impact digital awareness campaign highlighting their diverse course offerings and job-oriented training. The strategy involved short-form video content optimized for social media to capture the attention of career-focused individuals.",
+      results: [
+        "60% Increase in Course Inquiries",
+        "Over 300,000+ Targeted Video Views",
+        "Significant Growth in Social Media Following",
+        "Improved Brand Recall among Technical Students"
+      ],
+      testimonial: {
+        quote: "Wince Smart's strategic approach to our digital presence has been game-changing. Their video campaigns effectively communicated our value proposition to the right audience, leading to a noticeable surge in enrollments.",
+        author: "Management Team",
+        role: "Apollo Computer Education"
+      }
+    }
+  },
 ];
 
 const SERVICES: Service[] = [
@@ -81,9 +173,16 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#home" className="text-2xl font-display font-bold flex items-center gap-2">
-          <span className={`w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-white`}>N</span>
-          <span className={isScrolled || isMobileMenuOpen ? 'text-zinc-900' : 'text-white'}>NEXUS</span>
+        <a href="#home" className="flex flex-col items-center leading-none group">
+          <span className={`text-4xl font-display font-black tracking-tighter ${isScrolled || isMobileMenuOpen ? 'text-zinc-900' : 'text-white'}`}>
+            wince
+          </span>
+          <span className={`text-4xl font-display font-black tracking-tighter -mt-2 ${isScrolled || isMobileMenuOpen ? 'text-brand' : 'text-zinc-900'}`}>
+            smart
+          </span>
+          <span className={`text-[7px] uppercase font-bold tracking-[0.3em] mt-1 ${isScrolled || isMobileMenuOpen ? 'text-zinc-500' : 'text-white'}`}>
+            marketing agency
+          </span>
         </a>
 
         {/* Desktop Menu */}
@@ -180,15 +279,25 @@ const Hero = () => {
 
 const Clients = () => {
   return (
-    <section className="py-16 bg-zinc-50 border-b border-zinc-100">
+    <section className="py-20 bg-white border-b border-zinc-100">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="text-center text-zinc-400 text-sm font-bold uppercase tracking-widest mb-10">
+        <p className="text-center text-zinc-400 text-sm font-bold uppercase tracking-widest mb-12">
           Trusted by Industry Leaders
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-50 grayscale hover:grayscale-0 transition-all">
-          {CLIENTS.map((logo, i) => (
-            <div key={i} className="flex justify-center">
-              <img src={logo} alt="Client" className="h-8 object-contain" referrerPolicy="no-referrer" />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 items-center justify-center">
+          {CLIENTS.map((client, i) => (
+            <div key={i} className="flex flex-col items-center gap-4 group">
+              <div className="h-20 w-20 md:h-24 md:w-24 rounded-3xl overflow-hidden shadow-md border border-zinc-100 bg-white p-3 flex items-center justify-center group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
+                <img 
+                  src={client.logo} 
+                  alt={client.name} 
+                  className="w-full h-full object-contain" 
+                  referrerPolicy="no-referrer" 
+                />
+              </div>
+              <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider group-hover:text-brand transition-colors text-center">
+                {client.name}
+              </span>
             </div>
           ))}
         </div>
@@ -256,52 +365,173 @@ const Stats = () => {
   );
 };
 
-const FeaturedWorks = () => {
+const CaseStudyPage = ({ project }: { project: Project }) => {
   return (
-    <section className="py-24 bg-zinc-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-end mb-16">
-          <div>
-            <span className="text-brand font-bold uppercase tracking-widest text-sm mb-4 block">Our Work</span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-zinc-900">Selected Case Studies</h2>
-          </div>
-          <button className="hidden md:flex items-center gap-2 text-brand font-bold hover:gap-3 transition-all">
-            View All Projects <ArrowRight className="w-5 h-5" />
-          </button>
+    <div className="min-h-screen bg-white">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm py-4">
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <a href="/" className="flex flex-col items-center leading-none group">
+            <span className="text-4xl font-display font-black tracking-tighter text-zinc-900">wince</span>
+            <span className="text-4xl font-display font-black tracking-tighter -mt-2 text-brand">smart</span>
+            <span className="text-[7px] uppercase font-bold tracking-[0.3em] mt-1 text-zinc-500">marketing agency</span>
+          </a>
+          <a href="/" className="flex items-center gap-2 text-zinc-600 font-bold hover:text-brand transition-colors">
+            <ArrowRight className="w-5 h-5 rotate-180" /> Back to Home
+          </a>
         </div>
+      </nav>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROJECTS.slice(0, 3).map((project) => (
-            <motion.div 
-              key={project.id}
-              whileHover={{ y: -10 }}
-              className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-zinc-100"
-            >
-              <div className="aspect-[4/3] overflow-hidden relative">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-zinc-900">
-                    {project.category}
-                  </span>
+      <main className="pt-32 pb-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="rounded-[3rem] overflow-hidden shadow-2xl border border-zinc-100 bg-white"
+          >
+            <div className="aspect-[21/9] w-full relative bg-zinc-50 flex items-center justify-center overflow-hidden">
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className={`w-full h-full ${project.id === 7 ? 'object-contain p-24 scale-150' : 'object-cover'}`} 
+                referrerPolicy="no-referrer" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent" />
+              <div className="absolute bottom-12 left-12 right-12">
+                <span className="px-4 py-1.5 bg-brand rounded-full text-xs font-bold text-white uppercase tracking-widest mb-4 inline-block">
+                  {project.category}
+                </span>
+                <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-2">{project.company}</h1>
+                <p className="text-white/80 text-xl">{project.title}</p>
+              </div>
+            </div>
+
+            <div className="p-10 md:p-20">
+              <div className="grid lg:grid-cols-3 gap-20">
+                <div className="lg:col-span-2 space-y-16">
+                  <section>
+                    <h3 className="text-2xl font-bold text-zinc-900 mb-6 flex items-center gap-3">
+                      <span className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center text-brand text-lg">01</span>
+                      The Challenge
+                    </h3>
+                    <p className="text-zinc-600 leading-relaxed text-xl">
+                      {project.caseStudy?.challenge}
+                    </p>
+                  </section>
+                  
+                  <section>
+                    <h3 className="text-2xl font-bold text-zinc-900 mb-6 flex items-center gap-3">
+                      <span className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center text-brand text-lg">02</span>
+                      Our Strategic Solution
+                    </h3>
+                    <p className="text-zinc-600 leading-relaxed text-xl mb-10">
+                      {project.caseStudy?.solution}
+                    </p>
+
+                    {project.videos && project.videos.length > 0 ? (
+                      <div className="mt-12 space-y-12">
+                        <h4 className="text-2xl font-bold text-zinc-900 mb-6">Campaign Showcase</h4>
+                        <div className="grid md:grid-cols-2 gap-8">
+                          {project.videos.map((video, idx) => (
+                            <div key={idx} className="aspect-[9/16] md:aspect-video rounded-3xl overflow-hidden shadow-2xl border border-zinc-100 bg-zinc-100">
+                              <iframe 
+                                width="100%" 
+                                height="100%" 
+                                src={video} 
+                                title={`Campaign Video ${idx + 1}`} 
+                                frameBorder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowFullScreen
+                              ></iframe>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      project.link && project.link.includes('youtube.com/embed') && (
+                        <div className="mt-12">
+                          <h4 className="text-xl font-bold text-zinc-900 mb-6">Campaign Video</h4>
+                          <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl border border-zinc-100 bg-zinc-100">
+                            <iframe 
+                              width="100%" 
+                              height="100%" 
+                              src={project.link} 
+                              title="YouTube video player" 
+                              frameBorder="0" 
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                              allowFullScreen
+                            ></iframe>
+                          </div>
+                        </div>
+                      )
+                    )}
+
+                    {project.caseStudy?.testimonial && (
+                      <div className="mt-20 p-10 bg-brand/5 rounded-[2.5rem] border border-brand/10 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-8 opacity-10">
+                          <Megaphone className="w-32 h-32 text-brand" />
+                        </div>
+                        <div className="relative z-10">
+                          <p className="text-2xl font-display italic text-zinc-800 mb-8 leading-relaxed">
+                            "{project.caseStudy.testimonial.quote}"
+                          </p>
+                          <div>
+                            <p className="font-bold text-zinc-900 text-lg">{project.caseStudy.testimonial.author}</p>
+                            <p className="text-brand font-bold text-sm uppercase tracking-widest">{project.caseStudy.testimonial.role}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </section>
                 </div>
+
+                <aside className="space-y-8">
+                  <div className="bg-zinc-50 p-10 rounded-[2.5rem] border border-zinc-100 shadow-sm">
+                    <h3 className="text-2xl font-bold text-zinc-900 mb-8 flex items-center gap-3">
+                      <span className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center text-brand text-lg">03</span>
+                      Key Results
+                    </h3>
+                    <ul className="space-y-6">
+                      {project.caseStudy?.results.map((result, i) => (
+                        <li key={i} className="flex items-start gap-4">
+                          <div className="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center shrink-0 mt-1">
+                            <CheckCircle2 className="w-4 h-4 text-brand" />
+                          </div>
+                          <span className="text-zinc-800 font-semibold text-lg leading-tight">{result}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    {project.link && (
+                      <div className="mt-12 pt-12 border-t border-zinc-200">
+                        <p className="text-zinc-400 text-sm font-bold uppercase tracking-widest mb-6">Live Project</p>
+                        <a 
+                          href={project.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="w-full bg-zinc-900 hover:bg-brand text-white py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-xl shadow-zinc-900/10"
+                        >
+                          View Live Work <ExternalLink className="w-5 h-5" />
+                        </a>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="bg-brand p-10 rounded-[2.5rem] text-white shadow-xl shadow-brand/20">
+                    <h4 className="text-2xl font-display font-bold mb-4">Ready to scale?</h4>
+                    <p className="text-white/80 mb-8">Let's build your success story together.</p>
+                    <a href="/#contact" className="inline-block bg-white text-brand px-8 py-4 rounded-full font-bold hover:bg-zinc-100 transition-all">
+                      Start Your Project
+                    </a>
+                  </div>
+                </aside>
               </div>
-              <div className="p-8">
-                <p className="text-zinc-400 text-sm font-medium mb-1">{project.company}</p>
-                <h3 className="text-2xl font-display font-bold text-zinc-900 mb-6">{project.title}</h3>
-                <button className="flex items-center gap-2 text-brand font-bold text-sm group-hover:gap-3 transition-all">
-                  View Case Study <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </main>
+      
+      <Footer />
+    </div>
   );
 };
 
@@ -315,7 +545,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-brand font-bold uppercase tracking-widest text-sm mb-4 block">About Nexus</span>
+            <span className="text-brand font-bold uppercase tracking-widest text-sm mb-4 block">About Wince Smart</span>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-zinc-900 mb-8 leading-tight">
               Our Vision is to Redefine Digital Growth
             </h2>
@@ -349,10 +579,6 @@ const About = () => {
             <div className="rounded-[2rem] overflow-hidden shadow-2xl">
               <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team" referrerPolicy="no-referrer" />
             </div>
-            <div className="absolute -bottom-10 -left-10 bg-brand p-8 rounded-3xl shadow-xl hidden md:block">
-              <p className="text-white text-4xl font-display font-extrabold mb-1">10+</p>
-              <p className="text-white/80 text-sm font-bold uppercase tracking-wider">Years Experience</p>
-            </div>
           </motion.div>
         </div>
 
@@ -382,7 +608,7 @@ const About = () => {
   );
 };
 
-const Portfolio = () => {
+const Portfolio = ({ onOpenCaseStudy }: { onOpenCaseStudy: (p: Project) => void }) => {
   const [filter, setFilter] = useState<string>('All');
   const categories = ['All', 'Ads', 'Branding', 'Web Dev', 'SEO'];
 
@@ -425,8 +651,13 @@ const Portfolio = () => {
                 transition={{ duration: 0.3 }}
                 className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-zinc-100"
               >
-                <div className="aspect-video overflow-hidden">
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <div className="aspect-video overflow-hidden bg-zinc-50 flex items-center justify-center">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className={`w-full h-full ${project.id === 7 ? 'object-contain p-10' : 'object-cover'}`} 
+                    referrerPolicy="no-referrer" 
+                  />
                 </div>
                 <div className="p-8">
                   <div className="flex justify-between items-start mb-4">
@@ -436,7 +667,10 @@ const Portfolio = () => {
                     </div>
                   </div>
                   <p className="text-zinc-500 text-sm mb-6">{project.title}</p>
-                  <button className="w-full py-3 rounded-xl border border-zinc-200 text-zinc-800 font-bold text-sm hover:bg-zinc-50 transition-all flex items-center justify-center gap-2">
+                  <button 
+                    onClick={() => onOpenCaseStudy(project)}
+                    className="w-full py-3 rounded-xl border border-zinc-200 text-zinc-800 font-bold text-sm hover:bg-zinc-50 transition-all flex items-center justify-center gap-2"
+                  >
                     View Full Project <ExternalLink className="w-4 h-4" />
                   </button>
                 </div>
@@ -637,14 +871,20 @@ const Contact = () => {
                     </div>
                     <div className="flex items-center gap-4 text-white/80">
                       <Mail className="w-5 h-5 text-brand" />
-                      <span>hello@nexusdigital.com</span>
+                      <span>hello@wincesmart.com</span>
                     </div>
                   </div>
                   
                   <div className="flex gap-4 mt-8">
-                    {[Instagram, Twitter, Linkedin, Facebook].map((Icon, i) => (
-                      <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand transition-all">
-                        <Icon className="w-5 h-5" />
+                    {SOCIAL_LINKS.map((social, i) => (
+                      <a 
+                        key={i} 
+                        href={social.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand transition-all"
+                      >
+                        <social.icon className="w-5 h-5" />
                       </a>
                     ))}
                   </div>
@@ -664,17 +904,30 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="lg:col-span-1">
-            <a href="#home" className="text-2xl font-display font-bold flex items-center gap-2 mb-8">
-              <span className="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-white">N</span>
-              <span>NEXUS</span>
+            <a href="#home" className="flex flex-col items-start leading-none mb-8 group">
+              <span className="text-4xl font-display font-black tracking-tighter text-white">
+                wince
+              </span>
+              <span className="text-4xl font-display font-black tracking-tighter -mt-2 text-brand">
+                smart
+              </span>
+              <span className="text-[7px] uppercase font-bold tracking-[0.3em] mt-1 text-zinc-500">
+                marketing agency
+              </span>
             </a>
             <p className="text-zinc-500 leading-relaxed mb-8">
-              Empowering brands with data-driven marketing strategies and creative excellence since 2014.
+              Empowering brands with data-driven marketing strategies and creative excellence.
             </p>
             <div className="flex gap-4">
-              {[Instagram, Twitter, Linkedin, Facebook].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 hover:bg-brand hover:text-white transition-all">
-                  <Icon className="w-5 h-5" />
+              {SOCIAL_LINKS.map((social, i) => (
+                <a 
+                  key={i} 
+                  href={social.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 hover:bg-brand hover:text-white transition-all"
+                >
+                  <social.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
@@ -720,7 +973,7 @@ const Footer = () => {
         
         <div className="pt-12 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-zinc-500 text-sm">
-            © {new Date().getFullYear()} Nexus Digital Agency. All rights reserved.
+            © {new Date().getFullYear()} Wince Smart Agency. All rights reserved.
           </p>
           <div className="flex gap-8 text-sm text-zinc-500">
             <a href="#" className="hover:text-brand transition-colors">Privacy Policy</a>
@@ -735,15 +988,35 @@ const Footer = () => {
 // --- Main App ---
 
 export default function App() {
+  const [projectId, setProjectId] = useState<number | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('project');
+    if (id) {
+      setProjectId(parseInt(id));
+    }
+  }, []);
+
+  const openCaseStudy = (project: Project) => {
+    window.open(`?project=${project.id}`, '_blank');
+  };
+
+  if (projectId) {
+    const project = PROJECTS.find(p => p.id === projectId);
+    if (project) {
+      return <CaseStudyPage project={project} />;
+    }
+  }
+
   return (
     <div className="min-h-screen">
       <Navbar />
       <Hero />
       <Clients />
       <Stats />
-      <FeaturedWorks />
       <About />
-      <Portfolio />
+      <Portfolio onOpenCaseStudy={openCaseStudy} />
       <Services />
       <Contact />
       <Footer />
